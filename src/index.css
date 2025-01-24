@@ -4,8 +4,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* color: rgba(255, 255, 255, 0.87);
+  background-color: #242424; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,3 +13,22 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  margin: 0;
+}
+
+.hero-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-img {
+  position: absolute;
+  z-index: -100;
+  object-fit: cover;
+  height: 100%;
+}
+
+.hero-div{
+  color: red;
+}

@@ -26,6 +26,7 @@ body {
 .hero-img {
   position: absolute;
   z-index: -100;
+  object-fit: cover;
   width: 100%;
   height: 100%;
   -webkit-user-drag: none;
@@ -64,4 +65,9 @@ body {
 .redirect-btn:hover {
   background-color: red;
   cursor: pointer;
+}
+
+.hero-btn-div {
+  display: flex;
+  gap: 20px;
 }

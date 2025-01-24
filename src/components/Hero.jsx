@@ -13,8 +13,7 @@ export default function Hero() {
 
     useEffect(() => {
         if (currnetNum !== -1) {
-            // setCurrentHero(heroDatas[currnetNum]);
-            setCurrentHero(heroDatas[1]);
+            setCurrentHero(heroDatas[currnetNum]);
         }
     }, [currnetNum]);
 
@@ -29,7 +28,10 @@ export default function Hero() {
                         <h1 className='hero-title'>{currentHero.name}</h1>
                         <p className='hero-desc'>{currentHero.description}</p>
                         <h4 className='hero-v-line'>"{currentHero.voiceLine}"</h4>
-                        <button className='redirect-btn'>Go To Gallery</button>
+                        <div className='hero-btn-div'> 
+                            <button className='redirect-btn'>Go To Gallery</button>  
+                            <button className='redirect-btn'>Random Hero</button>  
+                        </div>
                     </div>
                 </div>
             ) : (

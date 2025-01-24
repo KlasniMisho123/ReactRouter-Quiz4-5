@@ -5,8 +5,17 @@ export default function Hero() {
     const [currnetNum, setCurrnetNum] = useState(-1);
     const [currentHero, setCurrentHero] = useState(null);
 
+
+    function handleRandomHero(prevNum) {
+        let randNum = Math.floor(Math.random() * heroDatas.length);
+        if (randNum === prevNum) {
+            randNum = Math.floor(Math.random() * heroDatas.length);
+        } else {
+            setCurrnetNum(randNum); 
+        }
+    }
+
     useEffect(() => {
-        // Generate a random number between 0 and heroDatas length
         let randNum = Math.floor(Math.random() * heroDatas.length);
         setCurrnetNum(randNum);
     }, []);
@@ -30,7 +39,8 @@ export default function Hero() {
                         <h4 className='hero-v-line'>"{currentHero.voiceLine}"</h4>
                         <div className='hero-btn-div'> 
                             <button className='redirect-btn'>Go To Gallery</button>  
-                            <button className='redirect-btn'>Random Hero</button>  
+                            <button className='redirect-btn'
+                            onClick={()=>{handleRandomHero(currnetNum)}}>Random Hero</button>  
                         </div>
                     </div>
                 </div>

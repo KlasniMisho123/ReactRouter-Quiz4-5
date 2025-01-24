@@ -32,7 +32,7 @@ const heroes = [
         imgSrc:"https://images.alphacoders.com/561/thumb-1920-561442.jpg",
         description: `Phantom Assassin is a deadly and elusive assassin who strikes swiftly from the shadows, 
                       delivering critical blows with unmatched precision.`,
-        voiceLine: "Death is at your door."
+        voiceLine: "I slept with their gods."
     },
     {
         name: "Monkey King",

@@ -71,3 +71,44 @@ body {
   display: flex;
   gap: 20px;
 }
+
+.gallery-title {
+  text-align: center;
+}
+
+.album-flex {
+  display: flex;
+  margin: 0% 2%;
+  gap: 3%;
+}
+
+.album-item {
+  width: 600px;
+  padding: 14px 14px 0px 14px ;
+  border-radius: 6px;
+  border: 1px solid rgb(156, 152, 152);
+}
+
+.album-img-div {
+  height: 150px;
+}
+
+.album-title {
+  text-align: center;
+}
+
+.yellow {
+  background: #92c952
+}
+
+.green {
+  background: #24f355
+}
+
+.pink {
+  background:#d32776
+}
+
+.purple {
+  background: #8c6399
+}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import heroDatas from "../heroCalc";
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
     const [currnetNum, setCurrnetNum] = useState(-1);
@@ -38,7 +39,9 @@ export default function Hero() {
                         <p className='hero-desc'>{currentHero.description}</p>
                         <h4 className='hero-v-line'>"{currentHero.voiceLine}"</h4>
                         <div className='hero-btn-div'> 
-                            <button className='redirect-btn'>Go To Gallery</button>  
+                            <Link className='redirect-btn'
+                            to="/gallery"
+                            >Go To Gallery</Link>  
                             <button className='redirect-btn'
                             onClick={()=>{handleRandomHero(currnetNum)}}>Random Hero</button>  
                         </div>

@@ -4,19 +4,43 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Hero from './components/Hero.jsx';
 import Gallery from './components/Gallery.jsx';
+import Header from './components/Header.jsx';
+import Footer from './components/Footer.jsx';
+
+
+const Layout = ({ children }) => (
+  <>
+    <Header />
+    {children}
+    <Footer />
+  </>
+);
 
 const router = createBrowserRouter([{
   path: "/",
-  element: <Hero />,
-  errorElement: <div> ERROR PAGE </div>,
+  element: (
+    <Layout>
+      <Hero />
+    </Layout>
+  ),
+  errorElement:(
+    <Layout>
+      <div> Error Page </div>
+    </Layout>
+  ),
 },
 {
   path: "gallery",
-  element: <Gallery />
+  element: (
+    <Layout>
+      <Gallery/>
+    </Layout>
+  ),
 }])
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
   </StrictMode>,
 )

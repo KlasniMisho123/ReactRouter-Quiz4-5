@@ -30,7 +30,7 @@ export default function Hero() {
     console.log(currentHero);
 
     return (
-        <>
+        <div className='hero-pos'>
             {currentHero ? (
                 <div className='hero-flex'>
                     <img className='hero-img' src={currentHero.imgSrc} alt={currentHero.name} />
@@ -50,6 +50,6 @@ export default function Hero() {
             ) : (
                 <div>Loading...</div>
             )}
-        </>
+        </div>
     );
 }

@@ -17,6 +17,13 @@ body {
   margin: 0;
 }
 
+.hero-pos {
+  position: relative;
+  height: 100vh; 
+  width: 100%; 
+  overflow: hidden; 
+}
+
 .hero-flex {
   display: flex;
   justify-content: center;
@@ -72,6 +79,10 @@ body {
   gap: 20px;
 }
 
+.gallery-body {
+  height: 100vh;
+}
+  
 .gallery-title {
   text-align: center;
 }
@@ -111,4 +122,48 @@ body {
 
 .purple {
   background: #8c6399
+}
+
+/* Header Css */
+
+.header-pos {
+  padding: 10px 20px;
+}
+
+/* Footer CSS */
+
+.footer-pos {
+  position: relative;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  border-top: 2px solid red;
+
+}
+
+.footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: space-between;
+  padding: 10px 20px;
+}
+
+.dota-gallery-logo {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.reserved-p {
+  font-size: 1rem;
+  color: #bbbbbb; 
+  align-self: center;
+}
+
+.dota-img {
+  height: 50px;
 }

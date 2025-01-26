@@ -26,7 +26,7 @@ useEffect(() => {
   }, [apiResponseData]);
 
   return (
-    <div>
+    <div className='gallery-body'>
         <h1 className='gallery-title'>Gallery</h1>
         <div className='album-flex'>
         {(

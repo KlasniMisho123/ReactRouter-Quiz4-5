@@ -1,8 +1,27 @@
-# React + Vite
+თქვენ უნდა შექმნათ აპლიკაცია და მოახდინოთ მასში React Router ის იმპლემენტაცია. აპლიკაცია უნდა შედგებოდეს 3 გვერდისგან. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+გვერდი 1 : Home
+- აქ უნდა განთავსდეს, ტექსტი და სურათი ე.წ Hero Image. 
+- გარდა ამისა უნდა გვქონდეს ერთი ღილაკი, "Go To Gallery" რომელიც Redirect ს გააკეთებს Gallery ის ფეიჯზე. (რედაირექტისთვის გამოიყენეთ რეაქტ როუტერის ფუნქციონალი)
 
-Currently, two official plugins are available:
+-- იხილეთ ნიმუში
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+გვერდი 2: Gallery
+წამოიღეთ დატა: https://jsonplaceholder.typicode.com/photos?_limit=4 axios ის გამოყენებით, დაალაგეთ ფოტოები და ტექსტი ისეთი ლეიაუთით როგორიც სურათზეა წარმოდგენილი
+
+-- იხილეთ ნიმუში
+
+გვერდი 3: Profile
+- აქ უბრალოდ  დეფოლტად გაცენტრილი უნდა იყოს პროექტის ავტორის სახელი. (მაგალითად Made By James)
+- თუ ლინკს სლეშის მერე დაემატა პარამეტრად სახელი ამ შემთხვევაში უნდა დაიბეჭდოს ეს სახელი. მაგალითად: localhost:5173/profile/Carl --> Made By Carl.
+
+*არ დაგავიწყდეთ Error Page ის იმპლემენტაცია. დიზაინი თქვენზეა (მინიმალიზმის მოყვარულმა ხალხმა შეგიძლიათ უბრალოდ ერორი დააწეროთ)
+*გაითვალისწინეთ, რომ ნავიგაცია ხელმისაწვდომი უნდა იყოს ყველა არსებულ გვერდზე.
+*შექმენით ასევე მინიმალისტური ფუტერიც, რომლის დიზაინი თქვენზეა. (მინიმალიზმის მოყვარულმა ხალხმა შეგიძლიათ უბრალოდ წელი დააწეროთ)
+
+
+ნაშრომი შეფასდება: ფუნქციონალის მუშაობის, დიზაინისა და კოდის ხარისხის მიხედვით.
+
+გისურვებთ წარმატებებს!
+
+UPDATE!!! : თუ სურათის ლინკები არ მუშაობენ რესფონსი გააგზავნეთ ამ ლინკზე და სურათი დაარენდერეთ ამ ლინკიდან: https://dummyjson.com/image/400x200?type=webp&text=I+am+a+webp+image

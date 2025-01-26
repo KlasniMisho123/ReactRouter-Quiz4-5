@@ -8,43 +8,44 @@ import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import Profile from './components/Profile.jsx';
 import ErrorPage from './components/ErrorPage.jsx';
+import { Outlet } from 'react-router-dom';
 
-
-const Layout = ({ children }) => (
+const Layout = () => (
   <>
     <Header />
-    {children}
+    <main>
+      <Outlet /> 
+    </main>
     <Footer />
   </>
 );
 
 const router = createBrowserRouter([{
   path: "/",
-  element: (
-    <Layout>
-      <Hero />
-    </Layout>
-  ),
-  errorElement:(
-    <Layout>
-      <ErrorPage />
-    </Layout>
-  ),
-},
-{
-  path: "gallery",
-  element: (
-    <Layout>
-      <Gallery/>
-    </Layout>
-  ),
-},{
-  path: "profile",
-  element: (
-    <Layout>
-      <Profile/>
-    </Layout>
-  ),
+  element: <Layout />,
+  children: [
+    {
+      path: "", 
+      element: <Hero />, 
+    },
+    {
+      path: "gallery",
+      element: <Gallery />, 
+    },
+    {
+      path: "profile",
+      children: [
+        {
+          path: "",
+          element: <Profile />,
+        },
+        {
+          path: ":username",
+          element: <Profile />,
+        },
+      ],
+    },
+  ],
 }
 ])
 

@@ -19,8 +19,6 @@ export default function Header() {
           <button onClick={()=>{handleSelectedNav("profile")}} className={currentPage === "profile" ? 'active-page-button' : ""}> <Link to="/profile">Profile</Link> </button>
         </nav>
       </div>
-      {currentPage}
-
     </header>
   )
 }

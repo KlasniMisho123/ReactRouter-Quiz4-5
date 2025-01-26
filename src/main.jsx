@@ -7,6 +7,7 @@ import Gallery from './components/Gallery.jsx';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import Profile from './components/Profile.jsx';
+import ErrorPage from './components/ErrorPage.jsx';
 
 
 const Layout = ({ children }) => (
@@ -26,7 +27,7 @@ const router = createBrowserRouter([{
   ),
   errorElement:(
     <Layout>
-      <div> Error Page </div>
+      <ErrorPage />
     </Layout>
   ),
 },

@@ -4,14 +4,16 @@ import { Link, useLocation } from 'react-router-dom'
 
 export default function Header() {
   let location = useLocation();
-  const [currentPage, setCurrentPage] = useState( location.pathname)
+  const [currentPage, setCurrentPage] = useState(location.pathname)
 
   function handleSelectedNav(selected) {
     setCurrentPage(selected)
   }
 
-  
-  
+  useEffect(()=>{
+    setCurrentPage(location.pathname)
+  },[location])
+
   return (
     <header>
       <div className='header-pos'> 

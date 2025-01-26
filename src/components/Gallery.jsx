@@ -22,7 +22,6 @@ useEffect(()=> {
 },[]) 
 
 useEffect(() => {
-    console.log(apiResponseData); 
   }, [apiResponseData]);
 
   return (

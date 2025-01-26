@@ -6,6 +6,7 @@ import Hero from './components/Hero.jsx';
 import Gallery from './components/Gallery.jsx';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
+import Profile from './components/Profile.jsx';
 
 
 const Layout = ({ children }) => (
@@ -36,7 +37,15 @@ const router = createBrowserRouter([{
       <Gallery/>
     </Layout>
   ),
-}])
+},{
+  path: "profile",
+  element: (
+    <Layout>
+      <Profile/>
+    </Layout>
+  ),
+}
+])
 
 
 createRoot(document.getElementById('root')).render(

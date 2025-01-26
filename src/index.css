@@ -128,8 +128,37 @@ body {
 
 .header-pos {
   padding: 10px 20px;
+  display: flex;
+  gap: 30%;
 }
 
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 50px;
+}
+
+.nav-bar * {
+  color: red;
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px;
+
+}
+
+.active-page-button {
+  border-bottom: 2px solid indigo;
+}
+
+.invisible-btn {
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+}
 /* Footer CSS */
 
 .footer-pos {
@@ -148,14 +177,14 @@ body {
 }
 
 .dota-gallery-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
   background: linear-gradient(90deg, #ff8a00, #e52e71);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
-  font-size: 1.5rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  font-size: 1.8rem;
 }
 
 .reserved-p {

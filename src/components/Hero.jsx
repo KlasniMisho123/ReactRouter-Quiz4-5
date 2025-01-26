@@ -27,7 +27,6 @@ export default function Hero() {
         }
     }, [currnetNum]);
 
-    console.log(currentHero);
 
     return (
         <div className='hero-pos'>

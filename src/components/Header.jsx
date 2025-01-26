@@ -11,7 +11,11 @@ export default function Header() {
   }
 
   useEffect(()=>{
-    setCurrentPage(location.pathname)
+    if(location.pathname==="/") {
+      setCurrentPage("")
+    } else {
+      setCurrentPage(location.pathname)
+    }
   },[location])
 
   return (

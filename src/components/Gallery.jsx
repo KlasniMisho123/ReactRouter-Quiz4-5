@@ -5,6 +5,13 @@ const api = axios.create({
     baseURL:"https://jsonplaceholder.typicode.com/photos?_limit=4"
 })
 
+// meore varianti -- X --  arces mushaobs
+// const api = axios.create({
+//     baseURL:"https://dummyjson.com/image/400x200?type=webp&text=I+am+a+webp+image"
+// })
+
+
+
 export default function Gallery() {
 const [apiResponseData, setApiResponseData] = useState([]);
 
@@ -16,6 +23,16 @@ async function fetchData() {
       console.error("Error fetching data:", error);
     }
   }
+// meore varianti -- X -- 
+// async function fetchData() {
+//     try {
+//       const response = await api.get("/");
+//       console.log("response: ", response.data)
+//       setApiResponseData(response.data)
+//     } catch (error) {
+//       console.error("Error fetching data:", error);
+//     }
+//   }
 
 useEffect(()=> {
     fetchData()
@@ -38,6 +55,9 @@ useEffect(() => {
             </div>
             ))
         )}
+        {/* <div>
+          {apiResponseData && <img src={apiResponseData} alt="WebP Image" />}
+        </div> */}
         </div>
     </div>
   )

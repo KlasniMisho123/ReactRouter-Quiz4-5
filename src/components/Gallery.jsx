@@ -5,41 +5,41 @@ const api = axios.create({
     baseURL:"https://jsonplaceholder.typicode.com/photos?_limit=4"
 })
 
-// meore varianti -- X --  arces mushaobs
-// const api = axios.create({
-//     baseURL:"https://dummyjson.com/image/400x200?type=webp&text=I+am+a+webp+image"
-// })
+const secApi = axios.create({
+    baseURL:"https://dummyjson.com/image/400x200?type=webp&text=I+am+a+webp+image"
+})
 
 
 
 export default function Gallery() {
 const [apiResponseData, setApiResponseData] = useState([]);
+const [secApiResponseData, setSecApiResponseData] = useState([]);
 
 async function fetchData() {
     try {
       const response = await api.get("/");
-      setApiResponseData(response.data)
+      const secResponse = await secApi.get("/", { responseType: "arraybuffer" });
+
+      const blob = new Blob([secResponse.data], { type: "image/webp" });
+      const imageUrl = URL.createObjectURL(blob);
+
+      setApiResponseData(response.data);
+      setSecApiResponseData(imageUrl);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   }
-// meore varianti -- X -- 
-// async function fetchData() {
-//     try {
-//       const response = await api.get("/");
-//       console.log("response: ", response.data)
-//       setApiResponseData(response.data)
-//     } catch (error) {
-//       console.error("Error fetching data:", error);
-//     }
-//   }
+
+
 
 useEffect(()=> {
     fetchData()
 },[]) 
 
 useEffect(() => {
-  }, [apiResponseData]);
+  console.log("apiResponseData: ", apiResponseData);
+  console.log("secApiResponseData: ", secApiResponseData);
+}, [apiResponseData, secApiResponseData]);
 
   return (
     <div className='gallery-body'>
@@ -48,16 +48,14 @@ useEffect(() => {
         {(
         apiResponseData.map((item) => (
             <div key={item.id} className={`album-item `}>
-                <div className={`album-img-div ${item.id === 1 ? "yellow" : item.id === 2 ? "purple" : item.id === 3 ? "green" : item.id === 4 ? "pink" : ""}`} > 
-                    <img src={item.thumbnailUrl} alt={item.title} />
+                <div className="album-img-div"> 
+                    {/* <img src={item.thumbnailUrl} alt={item.title} /> */}
+                    <img className='album-img' src={secApiResponseData} alt={"WebP Image"} />
                 </div>
                     <p className='album-title'>{item.title}</p>
             </div>
             ))
         )}
-        {/* <div>
-          {apiResponseData && <img src={apiResponseData} alt="WebP Image" />}
-        </div> */}
         </div>
     </div>
   )

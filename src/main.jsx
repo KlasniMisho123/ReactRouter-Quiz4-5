@@ -23,6 +23,13 @@ const Layout = () => (
 const router = createBrowserRouter([{
   path: "/",
   element: <Layout />,
+  errorElement: (
+    <>
+      <Header />
+      <ErrorPage />
+      <Footer />
+    </>
+  ),
   children: [
     {
       path: "", 

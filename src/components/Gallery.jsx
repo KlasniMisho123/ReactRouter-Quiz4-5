@@ -49,7 +49,6 @@ useEffect(() => {
         apiResponseData.map((item) => (
             <div key={item.id} className={`album-item `}>
                 <div className="album-img-div"> 
-                    {/* <img src={item.thumbnailUrl} alt={item.title} /> */}
                     <img className='album-img' src={secApiResponseData} alt={"WebP Image"} />
                 </div>
                     <p className='album-title'>{item.title}</p>
